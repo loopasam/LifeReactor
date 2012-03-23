@@ -4,8 +4,11 @@
 jQuery(function ($) {
 
 	var reactor = new Reactor();
-	var molecule = new Molecule();
-	reactor.addMolecule(molecule);	
+	
+	for(var i = 0; i < 30; i++){
+		var molecule = new Molecule();
+		reactor.addMolecule(molecule);	
+	} 
 	
 	setInterval(function(){
     	reactor.animate(); 
