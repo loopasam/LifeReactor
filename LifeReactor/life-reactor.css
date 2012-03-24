@@ -1,9 +1,31 @@
-#reactor{
+#reactor {
 	width: 1000px;
 	height: 500px;
 }
 
-.molecule{
+.molecule {
 	position: absolute;
+}
+
+body {
+	margin: 0px;
+}
+
+#circle-back {
+	position: absolute;
+	top: 0px;
+	left: 0px; width : 100px;
+	height: 100px;
 	background-color: red;
+	width: 100px;
+}
+
+#circle {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	-webkit-border-radius: 100px;
 }
