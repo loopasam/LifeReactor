@@ -10,6 +10,8 @@ function Molecule() {
 	this.dy = 1;
 	this.element = $('<div class="molecule"></div>');
 	this.morphedColor = "pink";
+	//TODO: implement superclass
+	this.type = "default";
 }
 
 Molecule.prototype.move = function(reactor) {

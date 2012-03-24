@@ -5,13 +5,13 @@ function Reactor() {
 	this.molecules = new Array();
 	this.color = "#000000";
 	this.element = $('<div id="reactor"></div>');
-	this.width = 500;
+	this.width = 1500;
 	this.height = 200;
 	this.x = 0;
 	this.y = 0;
 	this.minRange = 2;
 	this.maxRange = 7;
-	this.viscosity = 10;
+	this.viscosity = 20;
 	this.draw();
 }
 
@@ -30,12 +30,14 @@ Reactor.prototype.addMolecule = function(molecule){
 	
 	if(model == 0){
 		molecule.size = 5;
-		molecule.color = "#FFFF00";
-		molecule.morphedColor = "#00FF00";
+		molecule.color = "#fff154";
+		molecule.morphedColor = "#dd54ff";
+		molecule.type = 0;
 	}else{
 		molecule.size = 10;
-		molecule.color = "#FF0000";
-		molecule.morphedColor = "#00FFFF";
+		molecule.color = "#5673e0";
+		molecule.morphedColor = "#56e06e";
+		molecule.type = 1;
 	}
 	
 	molecule.x = Math.floor(Math.random()*this.height);
@@ -64,33 +66,35 @@ Reactor.prototype.reacts = function(){
 	for(var i = 0; i < this.molecules.length-1; i++){
 		var molecule1 = this.molecules[i];
 		for(var j = i +1 ; j < this.molecules.length; j++){
-			var collision = false;
 			var molecule2 = this.molecules[j];
-			
-			var x1 = molecule1.x + molecule1.size/2;
-			var y1 = molecule1.y + molecule1.size/2;
-			
-			var x2 = molecule2.x + molecule2.size/2;
-			var y2 = molecule2.y + molecule2.size/2;
-			
-			var norm = Math.sqrt((Math.pow((x2 - x1), 2) +Math.pow((y2 - y1), 2)));
-			if(norm < (molecule1.size/2 + molecule2.size/2)){
-				collision = true;
-			}
-			
-			if(collision){
+			if(molecule1.type != molecule2.type){
+				var collision = false;
+				var x1 = molecule1.x + molecule1.size/2;
+				var y1 = molecule1.y + molecule1.size/2;
 				
-				var morphedM1 = molecule1.morphedColor;
-				molecule1.morphedColor = molecule1.color;
-				molecule1.color = morphedM1;
+				var x2 = molecule2.x + molecule2.size/2;
+				var y2 = molecule2.y + molecule2.size/2;
 				
-				var morphedM2 = molecule2.morphedColor;
-				molecule2.morphedColor = molecule2.color;
-				molecule2.color = morphedM2;
+				var norm = Math.sqrt((Math.pow((x2 - x1), 2) +Math.pow((y2 - y1), 2)));
+				if(norm < (molecule1.size/2 + molecule2.size/2)){
+					collision = true;
+				}
+				
+				//TODO: Implement "reaction method in molecules"
+				if(collision){
+					
+					var morphedM1 = molecule1.morphedColor;
+					molecule1.morphedColor = molecule1.color;
+					molecule1.color = morphedM1;
+					
+					var morphedM2 = molecule2.morphedColor;
+					molecule2.morphedColor = molecule2.color;
+					molecule2.color = morphedM2;
 
 
-				molecule1.draw();
-				molecule2.draw();
+					molecule1.draw();
+					molecule2.draw();
+				}
 			}
 		}
 	} 
