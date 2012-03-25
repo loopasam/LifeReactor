@@ -5,9 +5,8 @@ jQuery(function ($) {
 
 	var reactor = new Reactor();
 	
-	for(var i = 0; i < 500; i++){
-		var molecule = new Molecule();
-		reactor.addMolecule(molecule);	
+	for(var i = 0; i < 1000; i++){
+		reactor.addMolecule();	
 	} 
 	
 	setInterval(function(){

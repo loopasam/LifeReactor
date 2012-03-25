@@ -2,16 +2,15 @@
  * 
  */
 function Molecule() {
-	this.size = 20;
+	this.size = 10;
 	this.color = "white";
 	this.x = 280;
 	this.y = 200;
-	this.dx = 1;
-	this.dy = 1;
+	this.dx = 5;
+	this.dy = 5;
+	//ugly, but simplifies JS casting.
+	this.type = "generic";
 	this.element = $('<div class="molecule"></div>');
-	this.morphedColor = "pink";
-	//TODO: implement superclass
-	this.type = "default";
 }
 
 Molecule.prototype.move = function(reactor) {
