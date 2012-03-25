@@ -25,7 +25,7 @@ Reactor.prototype.draw = function(){
 Reactor.prototype.addMolecule = function(){
 	
 	
-	var model = Math.floor(Math.random() * 4);
+	var model = Math.floor(Math.random() * 3);
 	var molecule = new Molecule();
 	if(model == 0){
 		 molecule.color = MoleculeA.color;
@@ -36,9 +36,6 @@ Reactor.prototype.addMolecule = function(){
 	}else if(model == 2){
 		 molecule.type = "C";
 		 molecule.color = MoleculeC.color;
-	}else if(model == 3){
-		 molecule.type = "D";
-		 molecule.color = MoleculeD.color;
 	}
 	
 	molecule.x = Math.floor(Math.random()*this.height);
@@ -93,18 +90,12 @@ Reactor.prototype.reacts = function(){
 					}else if(type1 == "B" && type2 == "C"){
 						molecule2.type = "B";
 						molecule2.color = MoleculeB.color;
-					}else if(type2 == "C" && type1 == "D"){
+					}else if(type2 == "C" && type1 == "A"){
 						molecule1.type = "C";
 						molecule1.color = MoleculeC.color;
-					}else if(type2 == "D" && type1 == "C"){
+					}else if(type2 == "A" && type1 == "C"){
 						molecule2.type = "C";
 						molecule2.color = MoleculeC.color;
-					}else if(type2 == "D" && type1 == "A"){
-						molecule1.type = "D";
-						molecule1.color = MoleculeD.color;
-					}else if(type2 == "A" && type1 == "D"){
-						molecule2.type = "D";
-						molecule2.color = MoleculeD.color;
 					}
 					
 					

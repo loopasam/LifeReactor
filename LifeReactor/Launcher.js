@@ -5,7 +5,7 @@ jQuery(function ($) {
 
 	var reactor = new Reactor();
 	
-	for(var i = 0; i < 1000; i++){
+	for(var i = 0; i < 2000; i++){
 		reactor.addMolecule();	
 	} 
 	
