@@ -10,7 +10,7 @@ function Reactor() {
 	this.x = 0;
 	this.y = 0;
 	this.viscosity = 1;
-	this.size = 25;
+	this.size = 15;
 	this.degrees = 3;
 	this.draw();
 	this.menu();
@@ -24,8 +24,8 @@ Reactor.prototype.menu = function(){
 	var text = $('<div id="text-menu"></div>');
 	text.css('width', $(window).width());
 	$('#menu').append(text);
-	$('#text-menu').append('<div id="title" class="button">turing 2012: an origin of life</div>'
-			+ '<div id="color-swap" class="menu-item">Color&nbsp;<div id="rising-generation" class="button">♐</div>/<div id="spontaneous-generation" class="button">⇵</div></div>'
+	$('#text-menu').append('<div id="title" class="button">(?) turing 2012: an origin of life</div>'
+			+ '<div id="color-swap" class="menu-item">Color&nbsp;<div id="rising-generation" class="button">~</div>/<div id="spontaneous-generation" class="button">!</div></div>'
 			+ '<div id="temperature" class="menu-item">Tº&nbsp;<div id="mwar-degrees" class="button">+</div>/<div id="less-degrees" class="button">-</div> |&nbsp;</div>'
 			+ '<div id="size" class="menu-item">Size&nbsp;<div id="mwar-big" class="button">+</div>/<div id="smaller-molecules" class="button">-</div> |&nbsp;</div>'
 			+ '<div id="number-particles" class="menu-item">#&nbsp;<div id="mwar-molecules" class="button">+</div>/<div class="button" id="less-molecules">-</div> |&nbsp;</div>'
@@ -50,10 +50,11 @@ Reactor.prototype.registerMenu = function() {
 
 Reactor.prototype.registerExplanationButton = function() {
 	$('#title').click(function(){
-		console.log("clkicked");
 		$('#explanation').toggle("slow");
 	});
-	
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) { $('#explanation').toggle("slow"); }
+	});
 };
 
 Reactor.prototype.registerBackToChaos = function() {
@@ -106,17 +107,17 @@ Reactor.prototype.registerSpontaneousGenerationButton = function(){
 	});
 };
 
-//TODO: implement better colors
 Reactor.prototype.getRandomColor = function() {
-	    var letters = '0123456789ABCDEF'.split('');
-	    var color = '#';
-	    for (var i = 0; i < 3; i++ ) {
-	        color += letters[Math.round(Math.random() * 15)];
-	    }
-	    if(color == "#000"){
-	    	color = "#fff";
-	    }
-	    return color;
+
+	var letters = '0123456789ABCDEF'.split('');
+	var color = '#';
+	for (var i = 0; i < 3; i++ ) {
+		color += letters[Math.round(Math.random() * 15)];
+	}
+	if(color == "#000"){
+		color = "#fff";
+	}
+	return color;
 };
 
 Reactor.prototype.registerMoreDegreesButton = function() {

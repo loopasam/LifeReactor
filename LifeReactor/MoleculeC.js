@@ -1,2 +1,2 @@
 function MoleculeC() {};
-MoleculeC.color = '#ea3b3b';
+MoleculeC.color = '#ff9935';

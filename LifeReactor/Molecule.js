@@ -13,8 +13,6 @@ function Molecule() {
 	this.element = $('<div class="molecule"></div>');
 }
 
-
-
 Molecule.prototype.move = function(reactor) {
 
 	var xmin = reactor.x;
@@ -30,10 +28,9 @@ Molecule.prototype.move = function(reactor) {
 		hasBumped = true;
 	}
 
-	//TODO add the speed to rules
-	if (this.x + this.size > xmax) {
+	if (this.x + this.size + this.dx > xmax) {
+		this.x = xmax - this.size - this.dx;
 		this.dx = -Math.abs(this.dx);
-		this.x = xmax - this.size;
 		hasBumped = true;
 	}
 
@@ -43,9 +40,9 @@ Molecule.prototype.move = function(reactor) {
 		hasBumped = true;
 	}
 
-	if (this.y + this.size > ymax) {
+	if (this.y + this.size + this.dy > ymax) {
+		this.y = ymax - this.size - this.dy;
 		this.dy = -Math.abs(this.dy);
-		this.y = ymax - this.size;
 		hasBumped = true;
 	}
 
