@@ -8,8 +8,34 @@
 	background-color: #ffffff;
 	top: 0px;
 	height: 50px;
-	opacity: 0.6;
-	filter: alpha(opacity =             60);
+	opacity: 0.8;
+	filter: alpha(opacity =               80);
+}
+
+p {
+	text-align: center;
+	line-height: 25px;
+	font-size: 20px;
+	color: #000;
+	font-family: "monospace", Georgia, Serif;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+a{
+	text-decoration: underline;
+	color: #000;
+}
+
+#explanation {
+	opacity: 0.8;
+	filter: alpha(opacity =               80);
+	display: none;
+	background-color: #ffffff;
+	z-index: 100;
+	position: absolute;
+	top: 50px;
+	left: 0px;
 }
 
 #title {
@@ -17,21 +43,21 @@
 	margin-left: 20px;
 }
 
-#color-swap{
-	margin-right: 20px;	
+#color-swap {
+	margin-right: 20px;
 }
 
 .menu-item {
 	float: right;
 }
 
-.button:hover{
+.button:hover {
 	cursor: pointer;
 	text-decoration: underline;
 }
 
-.button{
-	display: inline-block;	
+.button {
+	display: inline-block;
 }
 
 #text-menu {
@@ -41,12 +67,12 @@
 	font-size: 20px;
 	top: 50%;
 	margin-top: -10px;
-	color: black;
+	color: #000;
 	font-family: "monospace", Georgia, Serif;
 	float: right;
-	   -moz-user-select: none;
-   -khtml-user-select: none;
-   user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
 }
 
 .molecule {

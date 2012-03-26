@@ -24,9 +24,9 @@ Reactor.prototype.menu = function(){
 	var text = $('<div id="text-menu"></div>');
 	text.css('width', $(window).width());
 	$('#menu').append(text);
-	$('#text-menu').append('<div id="title">turing 2012: an origin of life</div>'
+	$('#text-menu').append('<div id="title" class="button">turing 2012: an origin of life</div>'
 			+ '<div id="color-swap" class="menu-item">Color&nbsp;<div id="rising-generation" class="button">♐</div>/<div id="spontaneous-generation" class="button">⇵</div></div>'
-			+ '<div id="temperature" class="menu-item">Tº&nbsp;<div id="mwar-degrees" class="button">+</div>/&nbsp;<div id="less-degrees" class="button">-</div> |&nbsp;</div>'
+			+ '<div id="temperature" class="menu-item">Tº&nbsp;<div id="mwar-degrees" class="button">+</div>/<div id="less-degrees" class="button">-</div> |&nbsp;</div>'
 			+ '<div id="size" class="menu-item">Size&nbsp;<div id="mwar-big" class="button">+</div>/<div id="smaller-molecules" class="button">-</div> |&nbsp;</div>'
 			+ '<div id="number-particles" class="menu-item">#&nbsp;<div id="mwar-molecules" class="button">+</div>/<div class="button" id="less-molecules">-</div> |&nbsp;</div>'
 			+ '<div id="back-to-chaos-wraper" class="menu-item"><div class="button" id="back-to-chaos">Back to Chaos</div> |&nbsp;</div>');
@@ -36,6 +36,7 @@ Reactor.prototype.menu = function(){
 };
 
 Reactor.prototype.registerMenu = function() {
+	this.registerExplanationButton();
 	this.registerMoreMoleculesButton();
 	this.registerLessMoleculesButton();
 	this.registerBiggerMoleculesButton();
@@ -45,6 +46,14 @@ Reactor.prototype.registerMenu = function() {
 	this.registerRisingGenerationButton();
 	this.registerSpontaneousGenerationButton();
 	this.registerBackToChaos();
+};
+
+Reactor.prototype.registerExplanationButton = function() {
+	$('#title').click(function(){
+		console.log("clkicked");
+		$('#explanation').toggle("slow");
+	});
+	
 };
 
 Reactor.prototype.registerBackToChaos = function() {
@@ -190,6 +199,10 @@ Reactor.prototype.removeMolecule = function(){
 };
 
 Reactor.prototype.draw = function(){
+	var explanation = $('#explanation');
+	explanation.css('width', $(window).width());
+	explanation.css('height', $(window).height() - 50);
+	$('body').append(explanation);
 	this.element.css('top', this.x);
 	this.element.css('left', this.y);
 	this.element.css('height', this.height);

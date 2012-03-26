@@ -1,0 +1,30 @@
+ _     _  __      ____                 _             
+| |   (_)/ _| ___|  _ \ ___  __ _  ___| |_ ___  _ __ 
+| |   | | |_ / _ \ |_) / _ \/ _` |/ __| __/ _ \| '__|
+| |___| |  _|  __/  _ <  __/ (_| | (__| || (_) | |   
+|_____|_|_|  \___|_| \_\___|\__,_|\___|\__\___/|_|   
+                                                     
+
+Author: Samuel Croset (http://www.samuelcroset.com)
+Version: 1
+Date Version: Mars 2012
+Credits: Sarah Carl (https://twitter.com/#!/SarahHCarl) for discussion, Alasdair Turner for the paper "A simple model of the Belousov-Zhabotinsky reaction from first principles" and Albert Einstein for the Brownian motion formalization (http://en.wikipedia.org/wiki/Brownian_motion).
+
+More info on the theory and source code: https://github.com/loopasam/LifeReactor/wiki
+
+Introduction:
+
+Ever wondered about the origin of life?
+
+So did Alan Turing (http://en.wikipedia.org/wiki/Alan_Turing),
+well-known scientist for his achievements in computer science and artificial intelligence.
+
+In 1951, he published an article, The Chemical Basis of Morphogenesis (http://en.wikipedia.org/wiki/The_Chemical_Basis_of_Morphogenesis),
+in which he describes the spontaneous formation of patterns arising from chaotic molecular systems.  
+
+This browser-based experiment celebrates the centenary of his birth
+and shows the formation of these patterns: How unorganized molecules can spontaneously  give rise to stable oscillating structures, simply by interacting and diffusing (brownian motion here).
+
+It is argued that such patterns are essential for biological morphogenesis. They may also be related to animal coats, skin pigmentation and neural networks.
+
+And why not, to the origin of life on Earth.
