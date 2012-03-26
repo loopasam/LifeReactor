@@ -8,8 +8,8 @@
 	background-color: #ffffff;
 	top: 0px;
 	height: 50px;
-	opacity: 0.4;
-	filter: alpha(opacity =             80);
+	opacity: 0.6;
+	filter: alpha(opacity =             60);
 }
 
 #title {
@@ -25,6 +25,15 @@
 	float: right;
 }
 
+.button:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.button{
+	display: inline-block;	
+}
+
 #text-menu {
 	position: absolute;
 	font-weight: bold;
@@ -35,6 +44,9 @@
 	color: black;
 	font-family: "monospace", Georgia, Serif;
 	float: right;
+	   -moz-user-select: none;
+   -khtml-user-select: none;
+   user-select: none;
 }
 
 .molecule {

@@ -2,16 +2,18 @@
  * 
  */
 function Molecule() {
-	this.size = 20;
+	this.size;
 	this.color = "white";
 	this.x = 280;
 	this.y = 200;
-	this.dx = 10;
-	this.dy = 10;
+	this.dx = 1;
+	this.dy = 1;
 	//ugly, but simplifies JS casting.
 	this.type = "generic";
 	this.element = $('<div class="molecule"></div>');
 }
+
+
 
 Molecule.prototype.move = function(reactor) {
 
@@ -28,6 +30,7 @@ Molecule.prototype.move = function(reactor) {
 		hasBumped = true;
 	}
 
+	//TODO add the speed to rules
 	if (this.x + this.size > xmax) {
 		this.dx = -Math.abs(this.dx);
 		this.x = xmax - this.size;
@@ -78,4 +81,8 @@ Molecule.prototype.draw = function() {
 	this.element.css('-webkit-border-radius', this.size);
 	this.element.css('-moz-border-radius', this.size);
 	$('#reactor').append(this.element);
+};
+
+Molecule.prototype.erase = function() {
+	this.element.remove();
 };
