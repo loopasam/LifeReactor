@@ -3,29 +3,45 @@
 	height: 500px;
 }
 
+#menu {
+	position: absolute;
+	background-color: #ffffff;
+	top: 0px;
+	height: 50px;
+	opacity: 0.4;
+	filter: alpha(opacity =             80);
+}
+
+#title {
+	float: left;
+	margin-left: 20px;
+}
+
+#color-swap{
+	margin-right: 20px;	
+}
+
+.menu-item {
+	float: right;
+}
+
+#text-menu {
+	position: absolute;
+	font-weight: bold;
+	line-height: 20px;
+	font-size: 20px;
+	top: 50%;
+	margin-top: -10px;
+	color: black;
+	font-family: "monospace", Georgia, Serif;
+	float: right;
+}
+
 .molecule {
 	position: absolute;
 }
 
 body {
 	margin: 0px;
-}
-
-#circle-back {
-	position: absolute;
-	top: 0px;
-	left: 0px; width : 100px;
-	height: 100px;
-	background-color: red;
-	width: 100px;
-}
-
-#circle {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100px;
-	height: 100px;
-	background-color: blue;
-	-webkit-border-radius: 100px;
+	background-color: #000000;
 }

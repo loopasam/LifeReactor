@@ -2,12 +2,12 @@
  * 
  */
 function Molecule() {
-	this.size = 5;
+	this.size = 20;
 	this.color = "white";
 	this.x = 280;
 	this.y = 200;
-	this.dx = 3;
-	this.dy = 3;
+	this.dx = 10;
+	this.dy = 10;
 	//ugly, but simplifies JS casting.
 	this.type = "generic";
 	this.element = $('<div class="molecule"></div>');

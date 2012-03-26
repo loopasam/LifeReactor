@@ -5,13 +5,60 @@ function Reactor() {
 	this.molecules = new Array();
 	this.color = "#000000";
 	this.element = $('<div id="reactor"></div>');
-	this.width = 1500;
-	this.height = 800;
+	this.width = $(window).width() - 10;
+	this.height = $(window).height() - 10;
 	this.x = 0;
 	this.y = 0;
 	this.viscosity = 1;
 	this.draw();
+	this.menu();
 }
+
+
+function get_random_color() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 3; i++ ) {
+        color += letters[Math.round(Math.random() * 15)];
+    }
+    return color;
+}
+
+Reactor.prototype.menu = function(){
+
+	var menu = $('<div id="menu"></div>');
+	menu.css('width', $(window).width());
+	$('body').append(menu);
+	var text = $('<div id="text-menu"></div>');
+	text.css('width', $(window).width());
+	$('#menu').append(text);
+	$('#text-menu').append('<div id="title">turing 2012: an origin of life</div>'
+			+ '<div id="color-swap" class="menu-item">Color ♐/⇵</div>'
+			+ '<div id="temperature" class="menu-item">Tº +/- |&nbsp;</div>'
+			+ '<div id="size" class="menu-item">Size +/- |&nbsp;</div>'
+			+ '<div id="number-particles" class="menu-item"># +/- |&nbsp;</div>'
+			+ '<div id="back-to-chaos" class="menu-item">Back to Chaos |&nbsp;</div>');
+	var that = this;
+	$('#menu').click(function(){
+		MoleculeA.color = get_random_color();
+		MoleculeB.color = get_random_color();
+		MoleculeC.color = get_random_color();
+
+//		for(var i = 0; i < that.molecules.length; i++){
+//			var molecule = that.molecules[i];
+//			if(molecule.type == "A"){
+//				molecule.color = MoleculeA.color;
+//			}else if(molecule.type == "B"){
+//				molecule.color = MoleculeB.color;
+//			}else if(molecule.type == "C"){
+//				molecule.color = MoleculeC.color;
+//			}
+////			molecule.draw();
+//		} 
+
+	});
+};
+
 
 Reactor.prototype.draw = function(){
 	this.element.css('top', this.x);
@@ -41,7 +88,6 @@ Reactor.prototype.addMolecule = function(){
 	molecule.x = Math.floor(Math.random()*this.height);
 	molecule.y = Math.floor(Math.random()*this.width);
 
-	
 	this.molecules.push(molecule);
 	molecule.draw();
 };
@@ -97,30 +143,13 @@ Reactor.prototype.reacts = function(){
 						molecule2.type = "C";
 						molecule2.color = MoleculeC.color;
 					}
-					
-					
-					
-					
-//					else if(molecule2.type == "A" && molecule1.type == "A"){
-//						molecule1.type = "B";
-//						molecule1.color = "red";
-//						molecule2.type = "B";
-//						molecule2.color = "red";
-//					}else if(molecule1.type == "B" && molecule2.type == "B"){
-//						molecule1.type = "C";
-//						molecule1.color = "green";
-//						molecule2.type = "C";
-//						molecule2.color = "green";
-//					}else if(molecule1.type == "C" && molecule2.type == "C"){
-//						molecule1.type = "A";
-//						molecule1.color = "blue";
-//						molecule2.type = "A";
-//						molecule2.color = "blue";
-//					}
-					
-					
-					
-					
+				
+						molecule1.dx = -molecule1.dx;
+						molecule1.dy = -molecule1.dy;
+						molecule2.dx = -molecule2.dx;
+						molecule2.dy = -molecule2.dy;
+			
+
 					molecule1.draw();
 					molecule2.draw();
 					
