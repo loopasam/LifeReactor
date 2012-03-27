@@ -73,10 +73,11 @@ Molecule.prototype.draw = function() {
 	this.element.css('top', this.x);
 	this.element.css('left', this.y);
 	this.element.css('background-color', this.color);
-	this.element.css('height', this.size);
-	this.element.css('width', this.size);
-	this.element.css('-webkit-border-radius', this.size);
-	this.element.css('-moz-border-radius', this.size);
+	this.element.css('height', this.size + "px");
+	this.element.css('width', this.size + "px");
+	this.element.css('border-radius', (this.size/2) + "px");
+	this.element.css('-moz-border-radius', (this.size/2) + "px");
+	this.element.css('-webkit-border-radius', (this.size/2) + "px");
 	$('#reactor').append(this.element);
 };
 
