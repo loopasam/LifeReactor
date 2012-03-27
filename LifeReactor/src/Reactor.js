@@ -9,7 +9,6 @@ function Reactor() {
 	this.height = $(window).height() - 10;
 	this.x = 0;
 	this.y = 0;
-	this.viscosity = 1;
 	this.size = 15;
 	this.degrees = 3;
 	this.draw();
