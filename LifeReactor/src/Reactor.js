@@ -9,12 +9,13 @@ function Reactor() {
 	this.height = $(window).height() - 10;
 	this.x = 0;
 	this.y = 0;
-	this.size = 15;
-	this.degrees = 3;
+	this.size = 20;
+	this.degrees = 5;
 	this.draw();
 	this.menu();
 }
 
+//Could have it's own class
 Reactor.prototype.menu = function(){
 
 	var menu = $('<div id="menu"></div>');
