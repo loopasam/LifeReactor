@@ -10,6 +10,7 @@ Version: 1
 Date Version: Mars 2012
 Credits: Sarah Carl (https://twitter.com/#!/SarahHCarl) for discussion, Alasdair Turner for the paper "A simple model of the Belousov-Zhabotinsky reaction from first principles" and Albert Einstein for the Brownian motion formalization (http://en.wikipedia.org/wiki/Brownian_motion).
 
+The result: http://samuelcroset.com/LifeReactor.html
 More info on the theory and source code: https://github.com/loopasam/LifeReactor/wiki
 
 
